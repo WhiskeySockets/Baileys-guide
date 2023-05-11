@@ -1,0 +1,63 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - "main"
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+
+      - name: Setup npm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Setup docusaurus cache
+        uses: actions/cache@v3
+        with:
+          path: ".docusaurus"
+          key: ${{ runner.os }}-docusaurus-${{ hashFiles('**/docusaurus.config.js') }}
+          restore-keys: |
+            ${{ runner.os }}-docusaurus-
+
+      - name: Setup node_modules cache
+        uses: actions/cache@v3
+        with:
+          path: "node_modules/.cache"
+          key: ${{ runner.os }}-node_modules-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-cache-
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Build Page
+        run: npm run build
+
+      - name: Deploy Page
+        uses: peaceiris/actions-gh-pages@v3
+        continue-on-error: true
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
