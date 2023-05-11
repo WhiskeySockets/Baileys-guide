@@ -67,7 +67,7 @@ const config = {
         title: 'Baileys',
         logo: {
           alt: 'WhiskeySockets Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
