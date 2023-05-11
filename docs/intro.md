@@ -4,13 +4,11 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **Baileys in less than 5 minutes**.
 
 ## Getting Started
 
 Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
 
 ### What you'll need
 
@@ -23,7 +21,7 @@ Generate a new Docusaurus site using the **classic template**.
 
 The classic template will automatically be added to your project after you run the command:
 
-```bash
+```bash npm2yarn
 npm init docusaurus@latest my-website classic
 ```
 
@@ -35,7 +33,7 @@ The command also installs all necessary dependencies you need to run Docusaurus.
 
 Run the development server:
 
-```bash
+```bash npm2yarn
 cd my-website
 npm run start
 ```
