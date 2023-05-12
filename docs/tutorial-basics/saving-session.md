@@ -25,7 +25,11 @@ const conn = makeWASocket({ auth: state });
 conn.ev.on("creds.update", saveCreds);
 ```
 
-**Note:** When a message is received/sent, due to signal sessions needing updating, the auth keys (`authState.keys`) will update. Whenever that happens, you must save the updated keys (`authState.keys.set()` is called). Not doing so will prevent your messages from reaching the recipient & cause other unexpected consequences. The `useMultiFileAuthState` function automatically takes care of that, but for any other serious implementation -- you will need to be very careful with the key state management.
+:::note
+
+When a message is received/sent, due to signal sessions needing updating, the auth keys (`authState.keys`) will update. Whenever that happens, you must save the updated keys (`authState.keys.set()` is called). Not doing so will prevent your messages from reaching the recipient & cause other unexpected consequences. The `useMultiFileAuthState` function automatically takes care of that, but for any other serious implementation -- you will need to be very careful with the key state management.
+
+:::
 
 ## Listening to Connection Updates
 
@@ -49,4 +53,8 @@ type ConnectionState = {
 };
 ```
 
-**Note:** this also offers any updates to the QR
+:::note
+
+This also offers any updates to the QR
+
+:::

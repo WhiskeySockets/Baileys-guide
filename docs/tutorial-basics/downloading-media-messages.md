@@ -35,7 +35,11 @@ sock.ev.on('messages.upsert', async ({ messages }) => {
 }
 ```
 
-**Note:** WhatsApp automatically removes old media from their servers. For the device to access said media -- a re-upload is required by another device that has it. This can be accomplished using:
+:::note
+
+WhatsApp automatically removes old media from their servers. For the device to access said media -- a re-upload is required by another device that has it. This can be accomplished using:
+
+:::
 
 ```ts
 const updatedMediaMsg = await sock.updateMediaMessage(msg);

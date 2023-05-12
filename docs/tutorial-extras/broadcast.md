@@ -4,7 +4,11 @@ sidebar_position: 4
 
 # Broadcast Lists & Stories
 
-**Note:** messages currently cannot be sent to broadcast lists from the MD version.
+:::note
+
+Messages currently cannot be sent to broadcast lists from the MD version.
+
+:::
 
 - You can send messages to broadcast lists the same way you send messages to groups & individual chats.
 - Right now, WA Web does not support creating broadcast lists, but you can still delete them.

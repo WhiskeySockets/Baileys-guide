@@ -80,4 +80,8 @@ WA uses an encrypted form of communication to send chat/app updates. This has be
   );
   ```
 
-**Note:** if you mess up one of your updates, WA can log you out of all your devices and you'll have to log in again.
+:::note
+
+If you mess up one of your updates, WA can log you out of all your devices and you'll have to log in again.
+
+:::
