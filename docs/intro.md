@@ -83,7 +83,7 @@ connectToWhatsApp();
 
 If the connection is successful, you will see a QR code printed on your terminal screen, scan it with WhatsApp on your phone and you'll be logged in!
 
-:::note
+:::tip
 
 Install `qrcode-terminal` using
 
@@ -95,6 +95,6 @@ to auto-print the QR to the terminal.
 
 :::
 
-:::note
+:::caution
 The code to support the legacy version of WA Web (pre multi-device) has been removed in v5. Only the standard multi-device connection is now supported. This is done as WA seems to have completely dropped support for the legacy version.
 :::

@@ -38,7 +38,7 @@ sock.ev.on("contacts.set", () => {
 
 The store also provides some simple functions such as `loadMessages` that utilize the store to speed up data retrieval.
 
-:::note
+:::caution
 
 I highly recommend building your own data store especially for MD connections, as storing someone's entire chat history in memory is a terrible waste of RAM.
 
