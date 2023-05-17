@@ -60,7 +60,7 @@ const config = {
           ],
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/scss/custom.scss"),
         },
         gtag: {
           trackingID: "G-WBY63HR4VS",
@@ -69,6 +69,8 @@ const config = {
       }),
     ],
   ],
+
+  plugins: ["docusaurus-plugin-sass"],
 
   /** @type any} */
   themes: [
