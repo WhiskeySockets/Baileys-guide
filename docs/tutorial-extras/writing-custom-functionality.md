@@ -27,7 +27,7 @@ Some examples:
    - `tag` -- what this frame is about (eg. message will have "message")
    - `attrs` -- a string key-value pair with some metadata (contains ID of the message usually)
    - `content` -- the actual data (eg. a message node will have the actual message content in it)
-   - read more about this format [here](/src/WABinary/readme.md)
+   - read more about this format [here](https://github.com/WhiskeySockets/Baileys/tree/master/src/WABinary)
 
    You can register a callback for an event using the following:
 
