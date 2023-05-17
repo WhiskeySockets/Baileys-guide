@@ -89,6 +89,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.png",
+      announcementBar: {
+        id: "support_us", // Increment on change
+        content:
+          '⭐️ If you like Baileys, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/WhiskeySockets/Baileys">GitHub</a>',
+      },
       navbar: {
         title: "Baileys",
         logo: {

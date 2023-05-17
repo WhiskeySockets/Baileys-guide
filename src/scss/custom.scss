@@ -4,9 +4,14 @@
  * work well for content-centric websites.
  */
 
+@use "sass:color";
+
+$primary-color-light: #2e8555;
+$primary-color-dark: #25c2a0;
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #{$primary-color-light};
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -15,11 +20,19 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --site-announcement-bar-stripe-color1: #{color.adjust(
+      $primary-color-light,
+      $lightness: 50%
+    )};
+  --site-announcement-bar-stripe-color2: #{color.adjust(
+      $primary-color-light,
+      $lightness: 80%
+    )};
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+[data-theme="dark"] {
+  --ifm-color-primary: #{$primary-color-dark};
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -27,4 +40,23 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --site-announcement-bar-stripe-color1: #{color.adjust(
+      $primary-color-dark,
+      $lightness: 50%
+    )};
+  --site-announcement-bar-stripe-color2: #{color.adjust(
+      $primary-color-dark,
+      $lightness: 80%
+    )};
+}
+
+div[class^="announcementBar_"] {
+  background: repeating-linear-gradient(
+    35deg,
+    var(--site-announcement-bar-stripe-color1),
+    var(--site-announcement-bar-stripe-color1) 20px,
+    var(--site-announcement-bar-stripe-color2) 10px,
+    var(--site-announcement-bar-stripe-color2) 40px
+  );
+  font-weight: bold;
 }
