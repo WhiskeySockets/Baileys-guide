@@ -89,6 +89,13 @@ const config = {
     ({
       // Replace with your project's social card
       image: "img/docusaurus-social-card.png",
+      metadata: [
+        {
+          name: "keywords",
+          content:
+            "baileys, whatsapp, js-whatsapp, whatsapp-api, whatsapp-web, whatsapp-chat, whatsapp-group, automation, multi-device, bot",
+        },
+      ],
       announcementBar: {
         id: "support_us", // Increment on change
         content:
