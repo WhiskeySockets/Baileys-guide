@@ -6,7 +6,7 @@ sidebar_position: 11
 
 WA uses an encrypted form of communication to send chat/app updates. This has been implemented mostly and you can send the following updates:
 
-- Archive a chat
+## Archive a chat
   ```ts
   const lastMsgInChat = await getLastMessageInChat("123456@s.whatsapp.net"); // implement this on your end
   await sock.chatModify(
@@ -14,7 +14,7 @@ WA uses an encrypted form of communication to send chat/app updates. This has be
     "123456@s.whatsapp.net"
   );
   ```
-- Mute/unmute a chat
+## Mute/unmute a chat
   ```ts
   // mute for 8 hours
   await sock.chatModify(
@@ -25,7 +25,7 @@ WA uses an encrypted form of communication to send chat/app updates. This has be
   // unmute
   await sock.chatModify({ mute: null }, "123456@s.whatsapp.net", []);
   ```
-- Mark a chat read/unread
+## Mark a chat read/unread
 
   ```ts
   const lastMsgInChat = await getLastMessageInChat("123456@s.whatsapp.net"); // implement this on your end
@@ -36,7 +36,7 @@ WA uses an encrypted form of communication to send chat/app updates. This has be
   );
   ```
 
-- Delete a message for me
+## Delete a message for me
 
   ```ts
   await sock.chatModify(
@@ -52,7 +52,7 @@ WA uses an encrypted form of communication to send chat/app updates. This has be
   );
   ```
 
-- Delete a chat
+## Delete a chat
 
   ```ts
   const lastMsgInChat = await getLastMessageInChat("123456@s.whatsapp.net"); // implement this on your end
@@ -70,7 +70,7 @@ WA uses an encrypted form of communication to send chat/app updates. This has be
   );
   ```
 
-- Pin/unpin a chat
+## Pin/unpin a chat
   ```ts
   await sock.chatModify(
     {

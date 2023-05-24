@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Groups
 
-- To create a group
+## To create a group
   ```ts
   // title & participants
   const group = await sock.groupCreate("My Fab Group", [
@@ -14,7 +14,7 @@ sidebar_position: 2
   console.log("created group with id: " + group.gid);
   sock.sendMessage(group.id, { text: "hello there" }); // say hello to everyone on the group
   ```
-- To add/remove people to a group or demote/promote people
+## To add/remove people to a group or demote/promote people
   ```ts
   // id & people to add to the group (will throw error if it fails)
   const response = await sock.groupParticipantsUpdate(
@@ -23,15 +23,15 @@ sidebar_position: 2
     "add" // replace this parameter with "remove", "demote" or "promote"
   );
   ```
-- To change the group's subject
+## To change the group's subject
   ```ts
   await sock.groupUpdateSubject("abcd-xyz@g.us", "New Subject!");
   ```
-- To change the group's description
+## To change the group's description
   ```ts
   await sock.groupUpdateDescription("abcd-xyz@g.us", "New Description!");
   ```
-- To change group settings
+## To change group settings
   ```ts
   // only allow admins to send messages
   await sock.groupSettingUpdate("abcd-xyz@g.us", "announcement");
@@ -42,21 +42,21 @@ sidebar_position: 2
   // only allow admins to modify the group's settings
   await sock.groupSettingUpdate("abcd-xyz@g.us", "locked");
   ```
-- To leave a group
+## To leave a group
   ```ts
   await sock.groupLeave("abcd-xyz@g.us"); // (will throw error if it fails)
   ```
-- To get the invite code for a group
+## To get the invite code for a group
   ```ts
   const code = await sock.groupInviteCode("abcd-xyz@g.us");
   console.log("group code: " + code);
   ```
-- To revoke the invite code in a group
+## To revoke the invite code in a group
   ```ts
   const code = await sock.groupRevokeInvite("abcd-xyz@g.us");
   console.log("New group code: " + code);
   ```
-- To query the metadata of a group
+## To query the metadata of a group
   ```ts
   const metadata = await sock.groupMetadata("abcd-xyz@g.us");
   console.log(
@@ -67,18 +67,18 @@ sidebar_position: 2
       metadata.desc
   );
   ```
-- To join the group using the invitation code
+## To join the group using the invitation code
   ```ts
   const response = await sock.groupAcceptInvite("xxx");
   console.log("joined to: " + response);
   ```
   Of course, replace `xxx` with invitation code.
-- To get group info by invite code
+## To get group info by invite code
   ```ts
   const response = await sock.groupGetInviteInfo("xxx");
   console.log("group information: " + response);
   ```
-- To join the group using groupInviteMessage
+## To join the group using groupInviteMessage
   ```ts
   const response = await sock.groupAcceptInviteV4(
     "abcd@s.whatsapp.net",
