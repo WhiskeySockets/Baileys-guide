@@ -87,3 +87,17 @@ sidebar_position: 2
   console.log("joined to: " + response);
   ```
   Of course, replace `xxx` with invitation code.
+## To get list request join
+  ``` ts
+  const response = await sock.groupRequestParticipantsList("abcd-xyz@g.us")
+  console.log(response)
+  ```
+## To approve/reject request join
+  ``` ts
+  const response = await sock.groupRequestParticipantsUpdate(
+      "abcd-xyz@g.us", // id group,
+      ["abcd@s.whatsapp.net", "efgh@s.whatsapp.net"],
+      "approve" // replace this parameter with "reject" 
+  )
+  console.log(response)
+  ```
