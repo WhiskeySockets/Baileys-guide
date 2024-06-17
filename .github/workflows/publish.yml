@@ -64,4 +64,5 @@ jobs:
         continue-on-error: true
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          cname: guide.whiskeysockets.io
           publish_dir: ./build
