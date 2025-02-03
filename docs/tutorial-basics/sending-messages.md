@@ -102,6 +102,17 @@ await sock.sendMessage(
     { audio: { url: "./Media/audio.mp3" }, mimetype: 'audio/mp4' }
     { url: "Media/audio.mp3" }, // can send mp3, mp4, & ogg
 )
+
+// sending image file
+await sock.sendMessage(
+    id, 
+    { 
+        image: {
+            url: './Media/ma_img.png'
+        },
+        caption: 'hello word'
+    }
+)
 ```
 
 ### Notes
